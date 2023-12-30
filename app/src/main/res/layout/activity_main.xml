@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.MainActivity"
+    android:background="@drawable/background1"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="190dp"
+        android:fontFamily="sans-serif-medium"
+        android:padding="5dp"
+        android:text="Select Gender"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="normal" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/male"
+            android:layout_width="170dp"
+            android:layout_height="121dp"
+            android:backgroundTint="@color/background_color"
+            android:src="@drawable/male_icon" />
+
+        <ImageButton
+            android:id="@+id/female"
+            android:layout_width="170dp"
+            android:layout_height="121dp"
+            android:backgroundTint="@color/background_color"
+            android:src="@drawable/female_icon" />
+    </RadioGroup>
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+            android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:textColor="@color/Lavender_Purple"
+        android:backgroundTint="#FFFFFF"
+        android:textSize="20sp"
+        android:text="next"/>
+
+</LinearLayout>

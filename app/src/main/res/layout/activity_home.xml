@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background1"
+    tools:context=".View.HomeActivity">
+        <TextView
+            android:id="@+id/welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome !"
+            android:textColorHint="@color/Lavender_Purple"
+            android:textSize="45sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="205dp"
+            android:textStyle="bold"
+            />
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="320dp"
+            android:hint="Username"
+            android:inputType="text"
+            android:textColorHint="@color/Lavender_Purple"
+            android:backgroundTint="@color/Lavender_Purple"
+            android:textSize="20sp"
+            />
+
+        <EditText
+            android:id="@+id/pwd"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/username"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="18dp"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColorHint="@color/Lavender_Purple"
+            android:backgroundTint="@color/Lavender_Purple"
+            android:textSize="20sp"
+            />
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pwd"
+            android:layout_marginTop="72dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="Log in"
+            android:textColor="@color/Lavender_Purple"
+            android:textSize="20sp"
+            android:backgroundTint="#FFFFFF"/>
+
+        <ImageView
+            android:layout_width="314dp"
+            android:layout_height="195dp"
+            android:layout_below="@id/login"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="-18dp"
+            android:layout_marginEnd="-52dp"
+            android:src="@drawable/b" />
+</RelativeLayout>
