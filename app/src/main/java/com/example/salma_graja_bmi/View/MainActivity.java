@@ -1,69 +1,70 @@
 package com.example.salma_graja_bmi.View;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.salma_graja_bmi.Controller.BMIController;
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
+import com.example.salma_graja_bmi.Controller.GenderController;
 import com.example.salma_graja_bmi.R;
+import androidx.appcompat.widget.AppCompatRadioButton;
 
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText editTextWeight, editTextHeight;
-    private Button btnCalculate;
-    private TextView textViewResult;
-
-
-    private BMIController controller;
+    private RadioGroup radioGroup;
+    private RadioButton maleRadioButton, femaleRadioButton;
+    private Button nextButton;
+    private TextView resultTextView;
+    private GenderController genderController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        editTextWeight = findViewById(R.id.Weight);
-        editTextHeight = findViewById(R.id.Height);
-        btnCalculate = findViewById(R.id.btnCalculate);
-        textViewResult = findViewById(R.id.textViewResult);
+        init();
 
-        controller = new BMIController();
-
-        btnCalculate.setOnClickListener(new View.OnClickListener() {
+        nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                calculateAndDisplayBMI();
+            public void onClick(View v) {
+                int selectedId = radioGroup.getCheckedRadioButtonId();
+                String gender = "";
+
+                if (selectedId == R.id.male) {
+                    gender = "Male";
+                } else if (selectedId == R.id.female) {
+                    gender = "Female";
+                }
+
+                if (!gender.isEmpty()) {
+                    // Save gender to controller
+                    genderController.setGender(gender);
+
+                    // Navigate to next activity
+                    Intent intent = new Intent(MainActivity.this, HeightAndWeightActivity.class);
+                    startActivity(intent);
+                } else {
+                    // Show a message if no gender selected
+                    resultTextView.setText("Please select your gender.");
+                }
             }
         });
     }
+    private void init() {
+        radioGroup = findViewById(R.id.radioGroup);
+        maleRadioButton = findViewById(R.id.male);
+        femaleRadioButton = findViewById(R.id.female);
+        nextButton = findViewById(R.id.next);
+        resultTextView = findViewById(R.id.result);
 
-    private void calculateAndDisplayBMI() {
-        String weightStr = editTextWeight.getText().toString();
-        String heightStr = editTextHeight.getText().toString();
-
-        if (!weightStr.isEmpty() && !heightStr.isEmpty()) {
-            float weight = Float.parseFloat(weightStr);
-            float height = Float.parseFloat(heightStr);
-
-            String result = controller.calculateAndInterpretBMI(weight, height);
-
-            displayResult(result);
-        } else {
-            textViewResult.setText("Veuillez entrer le poids et la taille.");
-        }
+        // Initialize GenderController
+        genderController = GenderController.getInstance();
     }
 
-    private void displayResult(String result) {
-        textViewResult.setText("Interprétation: " + result);
-    }
 }

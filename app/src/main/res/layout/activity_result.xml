@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.ResultActivity"
+    android:background="@drawable/background1"
+    android:orientation="vertical"
+    >
+
+    <ImageButton
+        android:id="@+id/retour1"
+        android:layout_width="67dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/retour"
+        android:backgroundTint="@color/background_color"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-medium"
+        android:padding="5dp"
+        android:text="Your Results"
+        android:textColor="@color/black"
+        android:textSize="23sp"
+        android:textStyle="normal" />
+
+    <ImageView
+        android:layout_width="284dp"
+        android:layout_height="368dp"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="0dp"
+        android:src="@drawable/result_reading" />
+    <TextView
+        android:id="@+id/BMICalcul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Your BMI is "
+        android:textColor="@color/Romantic_Purple"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/curseur"
+        android:layout_width="398dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/curseur" />
+    <TextView
+        android:id="@+id/Reponse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Your weight is "
+        android:textColor="@color/Romantic_Purple"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+</LinearLayout>

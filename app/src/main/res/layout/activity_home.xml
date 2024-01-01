@@ -60,11 +60,10 @@
             android:backgroundTint="#FFFFFF"/>
 
         <ImageView
-            android:layout_width="314dp"
-            android:layout_height="195dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/login"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="-18dp"
-            android:layout_marginEnd="-52dp"
+            android:layout_marginStart="230dp"
+            android:layout_marginTop="30dp"
             android:src="@drawable/b" />
 </RelativeLayout>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,38 +8,90 @@
     tools:context=".View.HeightAndWeightActivity"
     android:orientation="vertical">
 
+    <ImageButton
+        android:id="@+id/retour"
+        android:layout_width="68dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/background_color"
+        android:src="@drawable/retour" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="70dp"
         android:fontFamily="sans-serif-medium"
         android:padding="5dp"
-        android:text="Select Height & Weight"
+        android:text="Select Height &amp; Weight"
         android:textColor="@color/black"
         android:textSize="22sp"
         android:textStyle="normal" />
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"/>
 
-    <SeekBar
-        android:id="@+id/seekBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:max="100"
-        android:progress="0"
-        android:thumb="@drawable/seekbar" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <ImageView
-            android:layout_width="320dp"
-            android:layout_height="494dp"
-            android:layout_marginStart="42dp"
-            android:layout_marginTop="20dp"
+        <ImageView
+            android:id="@+id/fille"
+            android:layout_width="290dp"
+            android:layout_height="460dp"
+            android:layout_marginStart="63dp"
+            android:layout_marginTop="10dp"
             android:src="@drawable/fille" />
 
-</LinearLayout>
+        <SeekBar
+            android:id="@+id/seekBarHeight"
+            android:layout_width="428dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:foregroundGravity="left"
+            android:max="250"
+            android:rotation="-90" />
 
+        <TextView
+            android:id="@+id/heightValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/seekBarHeight"
+            android:layout_alignStart="@id/seekBarHeight"
+            android:layout_marginStart="208dp"
+            android:layout_marginTop="-15dp"
+            android:text="Height : .."
+            android:textColor="@color/Romantic_Purple"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/weight"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="300dp"
+            android:gravity="center"
+            android:hint="kg"
+            android:inputType="numberDecimal"
+            android:textColorHint="@color/Lavender_Purple"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:layout_width="115dp"
+            android:layout_height="94dp"
+            android:layout_marginTop="340dp"
+            android:src="@drawable/weight_icon" />
+
+        <Button
+            android:id="@+id/result"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="480dp"
+            android:backgroundTint="#FFFFFF"
+            android:text="Results"
+            android:textColor="@color/Lavender_Purple"
+            android:textSize="20sp" />
+    </RelativeLayout>
 
 </LinearLayout>

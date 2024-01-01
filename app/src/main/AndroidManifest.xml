@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Salma_Graja_BMI"
         tools:targetApi="31">
         <activity
+            android:name=".View.ResultActivity"
+            android:exported="false" />
+        <activity
             android:name=".View.HeightAndWeightActivity"
             android:exported="false" />
         <activity

@@ -7,13 +7,13 @@ public class BMIModel {
 
     public String interpretBMI(float bmi) {
         if (bmi < 18.5) {
-            return "Insuffisance pondérale";
+            return "Underweight";
         } else if (bmi < 24.9) {
-            return "Poids normal";
+            return "Normal Weight";
         } else if (bmi < 29.9) {
-            return "Surpoids";
+            return "Overweight";
         } else {
-            return "Obésité";
+            return "Obesity";
         }
     }
 }
